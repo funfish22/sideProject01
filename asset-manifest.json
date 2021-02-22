@@ -1,0 +1,33 @@
+{
+  "files": {
+    "404.js": "./404.94ef5c9fb99422fd38e7.js",
+    "404.js.map": "./404.94ef5c9fb99422fd38e7.js.map",
+    "Calendar.js": "./Calendar.d0e101a82d5ca6a8f294.js",
+    "Calendar.js.map": "./Calendar.d0e101a82d5ca6a8f294.js.map",
+    "Home.js": "./Home.abd73522f4ff344b1f36.js",
+    "Home.js.map": "./Home.abd73522f4ff344b1f36.js.map",
+    "Villagers.js": "./Villagers.39f02e34214e5cd4c88f.js",
+    "Villagers.js.map": "./Villagers.39f02e34214e5cd4c88f.js.map",
+    "main.js": "./main.fcb7be8171d0fef20dee.js",
+    "main.js.map": "./main.fcb7be8171d0fef20dee.js.map",
+    "runtime-main.js": "./static/js/runtime-main.6a8e63f3.js",
+    "runtime-main.js.map": "./static/js/runtime-main.6a8e63f3.js.map",
+    "static/css/6.405c93a1.chunk.css": "./static/css/6.405c93a1.chunk.css",
+    "6.e19ef1428f0a2ac8ace8.js": "./6.e19ef1428f0a2ac8ace8.js",
+    "6.e19ef1428f0a2ac8ace8.js.map": "./6.e19ef1428f0a2ac8ace8.js.map",
+    "7.48483a1e7ccdbce65f6c.js": "./7.48483a1e7ccdbce65f6c.js",
+    "7.48483a1e7ccdbce65f6c.js.map": "./7.48483a1e7ccdbce65f6c.js.map",
+    "8.8909fdc071d2efac70a3.js": "./8.8909fdc071d2efac70a3.js",
+    "8.8909fdc071d2efac70a3.js.map": "./8.8909fdc071d2efac70a3.js.map",
+    "6.e19ef1428f0a2ac8ace8.js.LICENSE.txt": "./6.e19ef1428f0a2ac8ace8.js.LICENSE.txt",
+    "index.html": "./index.html",
+    "static/css/6.405c93a1.chunk.css.map": "./static/css/6.405c93a1.chunk.css.map",
+    "static/media/index.css": "./static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a8e63f3.js",
+    "static/css/6.405c93a1.chunk.css",
+    "6.e19ef1428f0a2ac8ace8.js",
+    "main.fcb7be8171d0fef20dee.js"
+  ]
+}
