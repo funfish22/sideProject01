@@ -1,0 +1,2 @@
+(this.webpackJsonpgame_project=this.webpackJsonpgame_project||[]).push([[3],{169:function(t,e,c){"use strict";c.r(e);var s=c(57),i=c(59),n=c(3);e.default=function(){var t=Object(s.b)(),e=Object(s.c)((function(t){return t.Villagers.selectList})),c=window.location.hash.substr(window.location.hash.lastIndexOf("/")+1);return t(Object(i.b)(c)),Object(n.jsxs)("div",{children:[Object(n.jsx)("p",{children:e.title}),Object(n.jsx)("img",{style:{maxWidth:"100%"},src:e.imgUrl,alt:e.title})," "]})}}}]);
+//# sourceMappingURL=Villagers.dde9ee070aa65bdb59d9.js.map

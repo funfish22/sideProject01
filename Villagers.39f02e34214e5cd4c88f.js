@@ -1,2 +1,0 @@
-(this.webpackJsonpgame_project=this.webpackJsonpgame_project||[]).push([[3],{169:function(t,e,c){"use strict";c.r(e);var i=c(57),s=c(3);e.default=function(){var t=Object(i.c)((function(t){return t.Villagers.selectList}));return Object(s.jsxs)("div",{children:[Object(s.jsx)("p",{children:t.title}),Object(s.jsx)("img",{style:{maxWidth:"100%"},src:t.imgUrl,alt:t.title})," "]})}}}]);
-//# sourceMappingURL=Villagers.39f02e34214e5cd4c88f.js.map
