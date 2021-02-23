@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { HashRouter, BrowserRouter } from 'react-router-dom';
 import Router from './Router';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -17,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
     const classes = useStyles();
+    const footerShow = useSelector((state) => state.App.footerShow);
 
     return (
         <HashRouter>
@@ -24,7 +26,9 @@ function App() {
             <Box className={classes.boxRoot}>
                 <Router />
             </Box>
-            <Footer />
+            <Box display={footerShow}>
+                <Footer />
+            </Box>
         </HashRouter>
     );
 }

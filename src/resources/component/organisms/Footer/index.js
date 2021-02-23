@@ -2,17 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, BottomNavigation, BottomNavigationAction } from '@material-ui/core';
+import { Container, AppBar, BottomNavigation, BottomNavigationAction } from '@material-ui/core';
 
 import { DateRange as DateRangeIcon, Home as HomeIcon } from '@material-ui/icons';
 
 const useStyles = makeStyles(() => ({
     bottomNavigation: {
-        'max-width': 'none',
+        maxWidth: 'none',
     },
     appBar: {
         top: 'auto',
         bottom: 0,
+        backgroundColor: '#fff',
     },
 }));
 
@@ -23,31 +24,33 @@ function Footer() {
 
     return (
         <AppBar position="fixed" className={classes.appBar}>
-            <BottomNavigation
-                value={value}
-                onChange={(event, newValue) => {
-                    setValue(newValue);
-                }}
-                showLabels
-                className={classes.bottomNavigationRoot}
-            >
-                <BottomNavigationAction
-                    component={Link}
-                    to="/"
-                    value="/"
-                    className={classes.bottomNavigation}
-                    label="首頁"
-                    icon={<HomeIcon />}
-                />
-                <BottomNavigationAction
-                    component={Link}
-                    to="/Calendar"
-                    value="/Calendar"
-                    className={classes.bottomNavigation}
-                    label="行事曆"
-                    icon={<DateRangeIcon />}
-                />
-            </BottomNavigation>
+            <Container>
+                <BottomNavigation
+                    value={value}
+                    onChange={(event, newValue) => {
+                        setValue(newValue);
+                    }}
+                    showLabels
+                    className={classes.bottomNavigationRoot}
+                >
+                    <BottomNavigationAction
+                        component={Link}
+                        to="/"
+                        value="/"
+                        className={classes.bottomNavigation}
+                        label="首頁"
+                        icon={<HomeIcon />}
+                    />
+                    <BottomNavigationAction
+                        component={Link}
+                        to="/Calendar"
+                        value="/Calendar"
+                        className={classes.bottomNavigation}
+                        label="行事曆"
+                        icon={<DateRangeIcon />}
+                    />
+                </BottomNavigation>
+            </Container>
         </AppBar>
     );
 }

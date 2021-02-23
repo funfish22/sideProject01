@@ -53,7 +53,7 @@ function TabsRoot() {
                     <TabPanel value={value} index={0} dir={theme.direction}>
                         <Grid container>
                             {cards.map((row) => (
-                                <Grid item xs={4} key={row.id} className={classes.card}>
+                                <Grid item xs={4} sm={3} md={2} key={row.id} className={classes.card}>
                                     <Card title={row.title} id={row.id} imgUrl={row.imgUrl} />
                                 </Grid>
                             ))}
@@ -62,7 +62,7 @@ function TabsRoot() {
                     <TabPanel value={value} index={1} dir={theme.direction}>
                         <Grid container>
                             {cards.map((row) => (
-                                <Grid item xs={6} key={row.id} className={classes.card}>
+                                <Grid item xs={4} sm={3} md={2} key={row.id} className={classes.card}>
                                     <Card title={row.title} id={row.id} imgUrl={row.imgUrl} />
                                 </Grid>
                             ))}
@@ -71,7 +71,7 @@ function TabsRoot() {
                     <TabPanel value={value} index={2} dir={theme.direction}>
                         <Grid container>
                             {cards.map((row) => (
-                                <Grid item xs={12} key={row.id} className={classes.card}>
+                                <Grid item xs={4} sm={3} md={2} key={row.id} className={classes.card}>
                                     <Card title={row.title} id={row.id} imgUrl={row.imgUrl} />
                                 </Grid>
                             ))}

@@ -1,4 +1,6 @@
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { changeFooterShow } from '@reducers/App/action';
 import { selectVillager } from '@reducers/Villagers/action';
 
 function Villagers() {
@@ -6,7 +8,14 @@ function Villagers() {
     const selectList = useSelector((state) => state.Villagers.selectList);
     const path = window.location.hash.substr(window.location.hash.lastIndexOf('/') + 1);
 
-    dispatch(selectVillager(path));
+    useEffect(() => {
+        dispatch(changeFooterShow('none'));
+        dispatch(selectVillager(path));
+
+        return () => {
+            dispatch(changeFooterShow('block'));
+        };
+    }, []);
 
     return (
         <div>
