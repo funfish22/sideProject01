@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SwipeableViews from 'react-swipeable-views';
+import { useTheme } from '@material-ui/core/styles';
 
 import Card from '@component/molecules/Card';
 import TabPanel from './TabPanel';
@@ -15,6 +16,8 @@ function a11yProps(index) {
 }
 
 function TabsRoot() {
+    const theme = useTheme();
+
     const cards = useSelector((state) => state.Villagers.lists);
 
     const [value, setValue] = useState(0);
@@ -35,8 +38,12 @@ function TabsRoot() {
                 <Tab label="Item Three" {...a11yProps(2)} />
             </Tabs>
             <Box mx={-1}>
-                <SwipeableViews index={value} onChangeIndex={handleChangeIndex}>
-                    <TabPanel value={value} index={0}>
+                <SwipeableViews
+                    axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+                    index={value}
+                    onChangeIndex={handleChangeIndex}
+                >
+                    <TabPanel value={value} index={0} dir={theme.direction}>
                         <Grid container spacing={2}>
                             {cards.map((row) => (
                                 <Grid item xs={4} key={row.id}>
@@ -45,7 +52,7 @@ function TabsRoot() {
                             ))}
                         </Grid>
                     </TabPanel>
-                    <TabPanel value={value} index={1}>
+                    <TabPanel value={value} index={1} dir={theme.direction}>
                         <Grid container spacing={2}>
                             {cards.map((row) => (
                                 <Grid item xs={6} key={row.id}>
@@ -54,7 +61,7 @@ function TabsRoot() {
                             ))}
                         </Grid>
                     </TabPanel>
-                    <TabPanel value={value} index={2}>
+                    <TabPanel value={value} index={2} dir={theme.direction}>
                         <Grid container spacing={2}>
                             {cards.map((row) => (
                                 <Grid item xs={12} key={row.id}>
