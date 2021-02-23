@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SwipeableViews from 'react-swipeable-views';
-import { useTheme } from '@material-ui/core/styles';
+import { useTheme, makeStyles } from '@material-ui/core/styles';
 
 import Card from '@component/molecules/Card';
 import TabPanel from './TabPanel';
 
 import { Grid, Tabs, Tab, Box } from '@material-ui/core';
+
+const useStyles = makeStyles((theme) => ({
+    card: {
+        padding: theme.spacing(1),
+    },
+}));
 
 function a11yProps(index) {
     return {
@@ -17,6 +23,7 @@ function a11yProps(index) {
 
 function TabsRoot() {
     const theme = useTheme();
+    const classes = useStyles();
 
     const cards = useSelector((state) => state.Villagers.lists);
 
@@ -44,27 +51,27 @@ function TabsRoot() {
                     onChangeIndex={handleChangeIndex}
                 >
                     <TabPanel value={value} index={0} dir={theme.direction}>
-                        <Grid container spacing={2}>
+                        <Grid container>
                             {cards.map((row) => (
-                                <Grid item xs={4} key={row.id}>
+                                <Grid item xs={4} key={row.id} className={classes.card}>
                                     <Card title={row.title} id={row.id} imgUrl={row.imgUrl} />
                                 </Grid>
                             ))}
                         </Grid>
                     </TabPanel>
                     <TabPanel value={value} index={1} dir={theme.direction}>
-                        <Grid container spacing={2}>
+                        <Grid container>
                             {cards.map((row) => (
-                                <Grid item xs={6} key={row.id}>
+                                <Grid item xs={6} key={row.id} className={classes.card}>
                                     <Card title={row.title} id={row.id} imgUrl={row.imgUrl} />
                                 </Grid>
                             ))}
                         </Grid>
                     </TabPanel>
                     <TabPanel value={value} index={2} dir={theme.direction}>
-                        <Grid container spacing={2}>
+                        <Grid container>
                             {cards.map((row) => (
-                                <Grid item xs={12} key={row.id}>
+                                <Grid item xs={12} key={row.id} className={classes.card}>
                                     <Card title={row.title} id={row.id} imgUrl={row.imgUrl} />
                                 </Grid>
                             ))}
