@@ -10,6 +10,25 @@ const initState = {
         { id: '06', title: '六', imgUrl: 'https://material-ui.com/static/images/cards/paella.jpg' },
     ],
     selectList: {},
+    villager: {
+        season: [
+            {
+                title: '春',
+            },
+            {
+                title: '夏',
+            },
+            {
+                title: '秋',
+            },
+            {
+                title: '冬',
+            },
+            {
+                title: '婚',
+            },
+        ],
+    },
 };
 
 const Villagers = (state = initState, action) => {
