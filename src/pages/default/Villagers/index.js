@@ -15,12 +15,16 @@ import {
     Accordion,
     AccordionSummary as MuiAccordionSummary,
     AccordionDetails,
+    Grid,
+    Chip,
+    Divider,
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => {
     return {
         title: {
             fontWeight: 'bold',
+            marginTop: theme.spacing(1),
             marginBottom: theme.spacing(1),
         },
         AccordionRoot: {
@@ -53,6 +57,17 @@ const useStyles = makeStyles((theme) => {
                 },
             },
         },
+        infoTitle: {
+            width: 100,
+        },
+        infoText: {
+            fontSize: '0.875rem',
+            marginBottom: theme.spacing(1),
+        },
+        gutter: {
+            marginTop: theme.spacing(1),
+            marginBottom: theme.spacing(1),
+        },
     };
 });
 
@@ -61,9 +76,8 @@ const AccordionSummary = withStyles({
         backgroundColor: 'rgba(0, 0, 0, .03)',
         borderBottom: '1px solid rgba(0, 0, 0, .125)',
         marginBottom: -1,
-        minHeight: 56,
         '&$expanded': {
-            minHeight: 56,
+            minHeight: 'auto',
         },
     },
     content: {
@@ -117,12 +131,43 @@ function Villagers() {
                     <Typography color="textPrimary">{title}</Typography>
                 </Breadcrumbs>
             </Box>
-            <Box my={2}>
-                <Typography component="h2" variant="h5" className={classes.title}>
-                    {title}
-                </Typography>
-                <CardMedia component="img" image={imgUrl} title={title} />
-            </Box>
+            <Typography component="h2" variant="h5" className={classes.title}>
+                {title}
+            </Typography>
+            <Grid container spacing={3} component="section">
+                <Grid item sm={4} xs={12}>
+                    <CardMedia component="img" image={imgUrl} title={title} />
+                </Grid>
+                <Grid item sm={4} xs={12}>
+                    <Box width={1} mb={1}>
+                        <Box display="flex" flexWrap="wrap" alignItems="center">
+                            <Chip label="Basic" color="primary" className={classes.infoTitle} />
+                            <Box ml={2}>
+                                <Typography component="p" className={classes.infoText}>
+                                    Lorem ipsum dolor sit amet.
+                                </Typography>
+                                <Typography component="p" className={classes.infoText}>
+                                    Lorem ipsum dolor sit amet.
+                                </Typography>
+                            </Box>
+                        </Box>
+                    </Box>
+                    <Divider className={classes.gutter} />
+                    <Box width={1} my={1}>
+                        <Box display="flex" flexWrap="wrap" alignItems="center">
+                            <Chip label="Basic" color="primary" className={classes.infoTitle} />
+                            <Box ml={2}>
+                                <Typography component="p" className={classes.infoText}>
+                                    Lorem ipsum dolor sit amet.
+                                </Typography>
+                                <Typography component="p" className={classes.infoText}>
+                                    Lorem ipsum dolor sit amet.
+                                </Typography>
+                            </Box>
+                        </Box>
+                    </Box>
+                </Grid>
+            </Grid>
             <Box my={2}>
                 <Typography component="h3" variant="h6">
                     title
