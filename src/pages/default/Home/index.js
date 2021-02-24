@@ -8,8 +8,8 @@ import { Container, Box, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     title: {
-        marginTop: theme.spacing(2),
-        marginBottom: theme.spacing(2),
+        marginTop: theme.spacing(3),
+        marginBottom: theme.spacing(3),
     },
     media: {
         height: 100,
