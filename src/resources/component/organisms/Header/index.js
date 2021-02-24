@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeBackShow } from '@reducers/App/action';
 
 import LeftDrawer from '@component/molecules/LeftDrawer';
 
@@ -6,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { Container, AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
 
-import { Menu as MenuIcon, AccountCircle } from '@material-ui/icons';
+import { Menu as MenuIcon, AccountCircle, ArrowBack } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     menuButton: {
@@ -19,8 +22,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Header() {
+    const history = useHistory();
     const classes = useStyles();
     const [leftDrawerSwitch, setleftDrawerSwitch] = useState(false);
+
+    const backShow = useSelector((state) => state.App.backShow);
 
     const toggleDrawer = (open) => (event) => {
         if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -47,6 +53,17 @@ function Header() {
                     <Typography variant="h1" className={classes.title}>
                         project
                     </Typography>
+                    {backShow && (
+                        <IconButton
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            color="inherit"
+                            onClick={() => history.goBack()}
+                        >
+                            <ArrowBack />
+                        </IconButton>
+                    )}
                     <IconButton
                         aria-label="account of current user"
                         aria-controls="menu-appbar"

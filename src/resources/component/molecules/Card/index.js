@@ -17,9 +17,9 @@ const useStyles = makeStyles((theme) => ({
 
 function CardRoot(props) {
     const dispatch = useDispatch();
+    const classes = useStyles();
 
     const { title, id, imgUrl } = props;
-    const classes = useStyles();
 
     return (
         <Card>

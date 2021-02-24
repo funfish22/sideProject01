@@ -2,6 +2,7 @@ import { Types } from './action';
 
 const initState = {
     footerShow: 'block',
+    backShow: false,
 };
 
 const App = (state = initState, action) => {
@@ -10,6 +11,12 @@ const App = (state = initState, action) => {
             return {
                 ...state,
                 footerShow: action.payload.showSwitch,
+            };
+
+        case Types.CHANGE_BACK_SHOW:
+            return {
+                ...state,
+                backShow: action.payload.showSwitch,
             };
         default:
             return state;
