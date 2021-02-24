@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/default/Calendar/index.js"],"names":["Calendar"],"mappings":"gIAIeA,UAJf,WACI,OAAO","file":"Calendar.cc17dad36b1f7a88c58f.js","sourcesContent":["function Calendar() {\r\n    return <div>Calendar</div>;\r\n}\r\n\r\nexport default Calendar;\r\n"],"sourceRoot":""}
