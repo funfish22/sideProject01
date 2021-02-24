@@ -18,7 +18,6 @@ import {
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => {
-    console.log('theme', theme);
     return {
         title: {
             fontWeight: 'bold',
