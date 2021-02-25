@@ -56,6 +56,9 @@ const useStyles = makeStyles((theme) => {
                     backgroundColor: theme.palette.secondary.dark,
                 },
             },
+            '& .MuiAccordionDetails-root': {
+                padding: theme.spacing(2),
+            },
         },
         infoTitle: {
             width: 100,
@@ -172,7 +175,7 @@ function Villagers() {
                 <Typography component="h3" variant="h6">
                     title
                 </Typography>
-                <div className={classes.AccordionRoot}>
+                <Box className={classes.AccordionRoot}>
                     {season.map((row, index) => (
                         <Accordion
                             key={index}
@@ -183,14 +186,27 @@ function Villagers() {
                                 <Typography>{row.title}</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                                <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus
-                                    ex, sit amet blandit leo lobortis eget.
-                                </Typography>
+                                <Grid container spacing={3}>
+                                    <Grid item xs={12} sm={6} md={4}>
+                                        123
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} md={4}>
+                                        123
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} md={4}>
+                                        123
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} md={4}>
+                                        123
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} md={4}>
+                                        123
+                                    </Grid>
+                                </Grid>
                             </AccordionDetails>
                         </Accordion>
                     ))}
-                </div>
+                </Box>
             </Box>
         </Container>
     );
