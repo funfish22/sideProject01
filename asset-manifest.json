@@ -6,12 +6,12 @@
     "Calendar.js.map": "./Calendar.2db77cc7e82b6e66826c.js.map",
     "Home.js": "./Home.5f2460f8102155a55b94.js",
     "Home.js.map": "./Home.5f2460f8102155a55b94.js.map",
-    "Villagers.js": "./Villagers.247a8bcaa9ae7a54509e.js",
-    "Villagers.js.map": "./Villagers.247a8bcaa9ae7a54509e.js.map",
+    "Villagers.js": "./Villagers.0d2901a2639eba4cc209.js",
+    "Villagers.js.map": "./Villagers.0d2901a2639eba4cc209.js.map",
     "main.js": "./main.def3cb92d318a4c5242e.js",
     "main.js.map": "./main.def3cb92d318a4c5242e.js.map",
-    "runtime-main.js": "./static/js/runtime-main.eb40a690.js",
-    "runtime-main.js.map": "./static/js/runtime-main.eb40a690.js.map",
+    "runtime-main.js": "./static/js/runtime-main.f60247d7.js",
+    "runtime-main.js.map": "./static/js/runtime-main.f60247d7.js.map",
     "static/css/6.405c93a1.chunk.css": "./static/css/6.405c93a1.chunk.css",
     "6.b9bf8b6e43e2a4926ca5.js": "./6.b9bf8b6e43e2a4926ca5.js",
     "6.b9bf8b6e43e2a4926ca5.js.map": "./6.b9bf8b6e43e2a4926ca5.js.map",
@@ -29,7 +29,7 @@
     "static/media/index.css": "./static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.eb40a690.js",
+    "static/js/runtime-main.f60247d7.js",
     "static/css/6.405c93a1.chunk.css",
     "6.b9bf8b6e43e2a4926ca5.js",
     "main.def3cb92d318a4c5242e.js"
