@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeFooterShow, changeBackShow } from '@reducers/App/action';
-import { selectVillager } from '@reducers/Villagers/action';
+import ActionApp from '@reducers/App/action';
+import ActionVillager from '@reducers/Villagers/action';
 
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import {
@@ -104,13 +104,13 @@ function Villagers() {
     const { title, imgUrl } = selectList;
 
     useEffect(() => {
-        dispatch(changeFooterShow('none'));
-        dispatch(changeBackShow(true));
-        dispatch(selectVillager(path));
+        dispatch(ActionApp.changeFooterShow('none'));
+        dispatch(ActionApp.changeBackShow(true));
+        dispatch(ActionVillager.selectVillager(path));
 
         return () => {
-            dispatch(changeFooterShow('block'));
-            dispatch(changeBackShow(false));
+            dispatch(ActionApp.changeFooterShow('block'));
+            dispatch(ActionApp.changeBackShow(false));
         };
     }, []);
 

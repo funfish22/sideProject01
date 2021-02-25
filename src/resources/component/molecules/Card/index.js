@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectVillager } from '@reducers/Villagers/action';
+import ActionVillager from '@reducers/Villagers/action';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -23,7 +23,11 @@ function CardRoot(props) {
 
     return (
         <Card>
-            <CardActionArea component={Link} to={`Villagers/${id}`} onClick={() => dispatch(selectVillager(id))}>
+            <CardActionArea
+                component={Link}
+                to={`Villagers/${id}`}
+                onClick={() => dispatch(ActionVillager.selectVillager(id))}
+            >
                 <CardMedia component="img" height="100" image={imgUrl} title="Contemplative Reptile" />
                 <Typography gutterBottom component="p" align="center" className={classes.mediaTitle}>
                     {title}

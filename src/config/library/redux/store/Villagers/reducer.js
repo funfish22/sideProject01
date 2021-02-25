@@ -1,3 +1,4 @@
+import { createReducer } from 'reduxsauce';
 import { Types } from './action';
 
 const initState = {
@@ -31,20 +32,19 @@ const initState = {
     },
 };
 
-const Villagers = (state = initState, action) => {
-    switch (action.type) {
-        case Types.SELECT_VILLAGER:
-            const newselectList = state.lists.filter((row) => {
-                return row.id === action.payload.id;
-            });
+const selectVillager = (state = initState, action) => {
+    const newselectList = state.lists.filter((row) => {
+        return row.id === action.id;
+    });
 
-            return {
-                ...state,
-                selectList: newselectList[0],
-            };
-        default:
-            return state;
-    }
+    return {
+        ...state,
+        selectList: newselectList[0],
+    };
 };
 
-export default Villagers;
+const VILLAGERS = {
+    [Types.SELECT_VILLAGER]: selectVillager,
+};
+
+export default createReducer(initState, VILLAGERS);

@@ -1,12 +1,12 @@
-export const Types = {
-    SELECT_VILLAGER: 'villagers/sekect_villager',
-};
+import { createActions } from 'reduxsauce';
 
-export const selectVillager = (id) => {
-    return {
-        type: Types.SELECT_VILLAGER,
-        payload: {
-            id,
-        },
-    };
-};
+const prefix = 'VILLAGERS/';
+
+export const { Types, Creators } = createActions(
+    {
+        selectVillager: ['id'],
+    },
+    { prefix }
+);
+
+export default Creators;

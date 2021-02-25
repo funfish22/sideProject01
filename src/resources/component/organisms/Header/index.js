@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeBackShow } from '@reducers/App/action';
 
 import LeftDrawer from '@component/molecules/LeftDrawer';
 

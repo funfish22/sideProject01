@@ -1,26 +1,28 @@
+import { createReducer } from 'reduxsauce';
 import { Types } from './action';
 
-const initState = {
+export const INITIAL_STATE = {
     footerShow: 'block',
     backShow: false,
 };
 
-const App = (state = initState, action) => {
-    switch (action.type) {
-        case Types.CHANGE_FOOTER_SHOW:
-            return {
-                ...state,
-                footerShow: action.payload.showSwitch,
-            };
-
-        case Types.CHANGE_BACK_SHOW:
-            return {
-                ...state,
-                backShow: action.payload.showSwitch,
-            };
-        default:
-            return state;
-    }
+export const changeFooterShow = (state = INITIAL_STATE, action) => {
+    return {
+        ...state,
+        footerShow: action.showSwitch,
+    };
 };
 
-export default App;
+export const changeBackShow = (state = INITIAL_STATE, action) => {
+    return {
+        ...state,
+        backShow: action.showSwitch,
+    };
+};
+
+export const APP = {
+    [Types.CHANGE_FOOTER_SHOW]: changeFooterShow,
+    [Types.CHANGE_BACK_SHOW]: changeBackShow,
+};
+
+export default createReducer(INITIAL_STATE, APP);
