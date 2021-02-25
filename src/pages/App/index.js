@@ -23,7 +23,7 @@ function App() {
     return (
         <HashRouter>
             <Header />
-            <Box className={classes.boxRoot}>
+            <Box py={{ xs: 7, sm: 8 }}>
                 <Router />
             </Box>
             <Box display={footerShow}>

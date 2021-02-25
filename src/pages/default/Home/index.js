@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
+import SwiperCore, { Pagination, Autoplay } from 'swiper/core';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Tabs from '@component/molecules/Tabs';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Container, Box, Typography } from '@material-ui/core';
+import { Container, Box, Typography, CardMedia } from '@material-ui/core';
+
+import 'swiper/swiper.scss';
+import 'swiper/components/pagination/pagination.scss';
+
+SwiperCore.use([Pagination, Autoplay]);
 
 const useStyles = makeStyles((theme) => ({
     title: {
@@ -17,20 +25,43 @@ const useStyles = makeStyles((theme) => ({
     mediaTitle: {
         margin: 0,
     },
+    swiperRoot: {
+        '& .swiper-pagination-bullet': {
+            backgroundColor: theme.palette.primary.main,
+        },
+    },
 }));
 
 function Home() {
     const classes = useStyles();
 
+    const banner = useSelector((state) => state.Home.banner);
+
+    const { speed, lists } = banner;
+
     return (
-        <Container>
-            <Box color="primary.main" mb={2}>
-                <Typography component="h2" variant="h5" className={classes.title}>
-                    Title
-                </Typography>
-                <Tabs />
+        <>
+            <Box className={classes.swiperRoot}>
+                <Swiper slidesPerView={1} pagination={{ clickable: true }} loop autoplay={{ delay: speed }}>
+                    {lists &&
+                        lists.map((row, index) => {
+                            return (
+                                <SwiperSlide key={index}>
+                                    <CardMedia component="img" image={row.imgUrl} alt={row.title} />
+                                </SwiperSlide>
+                            );
+                        })}
+                </Swiper>
             </Box>
-        </Container>
+            <Container>
+                <Box color="primary.main" mb={2}>
+                    <Typography component="h2" variant="h5" className={classes.title}>
+                        Title
+                    </Typography>
+                    <Tabs />
+                </Box>
+            </Container>
+        </>
     );
 }
 
