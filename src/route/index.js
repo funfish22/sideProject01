@@ -17,11 +17,10 @@ export const routes = [
     },
     {
         name: 'Villagers',
-        path: '/Villagers/:id',
+        path: '/Villagers',
         component: React.lazy(() =>
             import(/*webpackChunkName:"Villagers"*/ /*webpackMode:"lazy"*/ '@page/default/Villagers')
         ),
-        exact: true,
     },
     {
         name: 'Page Not Found',
