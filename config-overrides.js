@@ -1,5 +1,11 @@
 const path = require('path');
-const { override, addWebpackAlias, addWebpackModuleRule, fixBabelImports } = require('customize-cra');
+const {
+    override,
+    addWebpackAlias,
+    addWebpackModuleRule,
+    fixBabelImports,
+    removeModuleScopePlugin,
+} = require('customize-cra');
 
 const addChunkName = () => (config) => {
     config.output = {
@@ -11,6 +17,7 @@ const addChunkName = () => (config) => {
 
 module.exports = override(
     addChunkName(),
+    removeModuleScopePlugin(),
     // addWebpackModuleRule({
     //     test: /\.svg$/,
     //     use: [
@@ -25,11 +32,12 @@ module.exports = override(
     addWebpackAlias({
         '@apis': path.resolve(__dirname, './src/apis'),
         '@actions': path.resolve(__dirname, './src/store/actions'),
-        '@reducers': path.resolve(__dirname, './src/config/library/redux/store'),
+        '@reducers': path.resolve(__dirname, './src/serviceCenter/store'),
         '@assets': path.resolve(__dirname, './src/assets'),
         '@icon': path.resolve(__dirname, './src/assets/icon'),
         '@route': path.resolve(__dirname, './src/route'),
         '@component': path.resolve(__dirname, './src/resources/component'),
         '@page': path.resolve(__dirname, './src/pages'),
+        '@serviceCenter': path.resolve(__dirname, './src/serviceCenter'),
     })
 );
