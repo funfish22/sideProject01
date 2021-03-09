@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import withVillagersPageContainer from '@serviceCenter/containers/Villagers/VillagersPageContainer';
 
 import { Container, Box, Typography } from '@material-ui/core';
 
@@ -7,7 +8,7 @@ const Detail = React.lazy(() =>
     import(/*webpackChunkName:"VillagersDetail"*/ /*webpackMode:"lazy"*/ '@page/default/Villagers/detail')
 );
 
-function Villagers() {
+function VillagersPage() {
     const match = useRouteMatch();
 
     return (
@@ -26,4 +27,8 @@ function Villagers() {
     );
 }
 
-export default Villagers;
+const VillagersWrapperWithContainer = withVillagersPageContainer({
+    Component: VillagersPage,
+});
+
+export default VillagersWrapperWithContainer;

@@ -1,5 +1,11 @@
-function Calendar() {
+import withCalendarPageContainer from '@serviceCenter/containers/Calendar/CalendarPageContainer';
+
+function CalendarPage() {
     return <div>Calendar</div>;
 }
 
-export default Calendar;
+const CalendarPageWrapperWithContainer = withCalendarPageContainer({
+    Component: CalendarPage,
+});
+
+export default CalendarPageWrapperWithContainer;

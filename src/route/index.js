@@ -23,11 +23,6 @@ export const routes = [
         ),
     },
     {
-        name: 'Test',
-        path: '/Test',
-        component: React.lazy(() => import(/*webpackChunkName:"Test"*/ /*webpackMode:"lazy"*/ '@page/default/Test')),
-    },
-    {
         name: 'Page Not Found',
         path: '*',
         component: React.lazy(() =>

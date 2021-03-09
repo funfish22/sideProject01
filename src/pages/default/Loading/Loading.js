@@ -1,6 +1,8 @@
+import withCalendarPageContainer from '@serviceCenter/containers/Calendar/CalendarPageContainer';
+
 import { Container, Typography } from '@material-ui/core';
 
-function Loading() {
+function LoadingPage() {
     return (
         <Container>
             <Typography component="p">Loading profile...</Typography>
@@ -8,4 +10,8 @@ function Loading() {
     );
 }
 
-export default Loading;
+const LoadingPageWrapperWithContainer = withCalendarPageContainer({
+    Component: LoadingPage,
+});
+
+export default LoadingPageWrapperWithContainer;

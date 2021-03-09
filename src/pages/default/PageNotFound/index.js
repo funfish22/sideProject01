@@ -1,5 +1,11 @@
-function PageNotFound() {
+import withPageNotFoundPageContainer from '@serviceCenter/containers/PageNotFound/PageNotFoundPageContainer';
+
+function PageNotFoundPage() {
     return <div>page not found</div>;
 }
 
-export default PageNotFound;
+const PageNotFoundPageWrapperWithContainer = withPageNotFoundPageContainer({
+    Component: PageNotFoundPage,
+});
+
+export default PageNotFoundPageWrapperWithContainer;

@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import ActionApp from '@reducers/App/action';
-import ActionVillager from '@reducers/Villagers/action';
+import withVillagersDetailPageContainer from '@serviceCenter/containers/Villagers/VillagersDetailPageContainer';
 
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import {
@@ -92,30 +90,12 @@ const AccordionSummary = withStyles({
     expanded: {},
 })(MuiAccordionSummary);
 
-function VillagersDetil() {
-    const dispatch = useDispatch();
+function VillagersDetilPage(props) {
+    const { season, title, imgUrl } = props;
+
     const classes = useStyles();
 
-    const path = window.location.hash.substr(window.location.hash.lastIndexOf('/') + 1);
-
     const [expanded, setExpanded] = useState(false);
-    const selectList = useSelector((state) => state.Villagers.selectList);
-    const villager = useSelector((state) => state.Villagers.villager);
-
-    const { season } = villager;
-
-    const { title, imgUrl } = selectList;
-
-    useEffect(() => {
-        dispatch(ActionApp.changeFooterShow('none'));
-        dispatch(ActionApp.changeBackShow(true));
-        dispatch(ActionVillager.selectVillager(path));
-
-        return () => {
-            dispatch(ActionApp.changeFooterShow('block'));
-            dispatch(ActionApp.changeBackShow(false));
-        };
-    }, []);
 
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
@@ -212,4 +192,8 @@ function VillagersDetil() {
     );
 }
 
-export default VillagersDetil;
+const VillagersDetailWrapperWithContainer = withVillagersDetailPageContainer({
+    Component: VillagersDetilPage,
+});
+
+export default VillagersDetailWrapperWithContainer;

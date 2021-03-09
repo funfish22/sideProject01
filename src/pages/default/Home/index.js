@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import withHomePageContainer from '@serviceCenter/containers/Home/HomePageContainer';
 
 import SwiperCore, { Pagination, Autoplay } from 'swiper/core';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -32,12 +32,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Home() {
+function HomePage(props) {
+    const { speed, lists } = props;
+
     const classes = useStyles();
-
-    const banner = useSelector((state) => state.Home.banner);
-
-    const { speed, lists } = banner;
 
     return (
         <>
@@ -65,4 +63,8 @@ function Home() {
     );
 }
 
-export default Home;
+const HomePageWrapperWithContainer = withHomePageContainer({
+    Component: HomePage,
+});
+
+export default HomePageWrapperWithContainer;
