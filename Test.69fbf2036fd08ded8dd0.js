@@ -1,2 +1,0 @@
-(this.webpackJsonpgame_project=this.webpackJsonpgame_project||[]).push([[3],{280:function(t,n,c){"use strict";c.r(n);var e=c(27),r=c.n(e),o=c(37),i=c(3);var s=function t(n){var c=n.Component;function e(){var t=Object(o.c)((function(t){return t.App.backShow}));return Object(i.jsx)(c,{switch123:t})}return r()(e,t),e}({Component:function(t){var n=t.switch123;return console.log("switch123",n),n&&Object(i.jsx)("div",{children:"123"})}});n.default=s}}]);
-//# sourceMappingURL=Test.69fbf2036fd08ded8dd0.js.map

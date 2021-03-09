@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/default/PageNotFound/index.js"],"names":["PageNotFound"],"mappings":"gIAIeA,UAJf,WACI,OAAO","file":"404.5f1a203ea74997aa7793.js","sourcesContent":["function PageNotFound() {\r\n    return <div>page not found</div>;\r\n}\r\n\r\nexport default PageNotFound;\r\n"],"sourceRoot":""}
