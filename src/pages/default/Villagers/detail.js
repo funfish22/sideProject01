@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 import withVillagersDetailPageContainer from '@serviceCenter/containers/Villagers/VillagersDetailPageContainer';
 
@@ -191,6 +192,12 @@ function VillagersDetilPage(props) {
         </Container>
     );
 }
+
+VillagersDetilPage.propTypes = {
+    season: PropTypes.array,
+    title: PropTypes.string,
+    imgUrl: PropTypes.string,
+};
 
 const VillagersDetailWrapperWithContainer = withVillagersDetailPageContainer({
     Component: VillagersDetilPage,

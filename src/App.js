@@ -1,3 +1,4 @@
+import React from 'react';
 import { createStore, compose, applyMiddleware } from 'redux';
 
 import Entrance from '@page/App';

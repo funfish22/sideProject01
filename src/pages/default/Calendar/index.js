@@ -1,3 +1,4 @@
+import React from 'react';
 import withCalendarPageContainer from '@serviceCenter/containers/Calendar/CalendarPageContainer';
 
 function CalendarPage() {

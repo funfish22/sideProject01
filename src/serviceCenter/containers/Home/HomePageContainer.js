@@ -1,5 +1,6 @@
+import React from 'react';
 import hoistNonReactStatic from 'hoist-non-react-statics';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function withHomePageContainer({ Component }) {
     function HomePageContainer() {

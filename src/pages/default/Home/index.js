@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import withHomePageContainer from '@serviceCenter/containers/Home/HomePageContainer';
 
 import SwiperCore, { Pagination, Autoplay } from 'swiper/core';
@@ -62,6 +63,11 @@ function HomePage(props) {
         </>
     );
 }
+
+HomePage.propTypes = {
+    speed: PropTypes.number,
+    lists: PropTypes.array,
+};
 
 const HomePageWrapperWithContainer = withHomePageContainer({
     Component: HomePage,

@@ -1,3 +1,4 @@
+import React from 'react';
 import withCalendarPageContainer from '@serviceCenter/containers/Calendar/CalendarPageContainer';
 
 import { Container, Typography } from '@material-ui/core';

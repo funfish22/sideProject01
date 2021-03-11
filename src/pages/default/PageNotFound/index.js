@@ -1,3 +1,4 @@
+import React from 'react';
 import withPageNotFoundPageContainer from '@serviceCenter/containers/PageNotFound/PageNotFoundPageContainer';
 
 function PageNotFoundPage() {

@@ -1,3 +1,4 @@
+import React from 'react';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
 function withCalendarPageContainer({ Component }) {

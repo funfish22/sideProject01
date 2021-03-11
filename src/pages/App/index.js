@@ -1,5 +1,6 @@
 import React from 'react';
-import { HashRouter, BrowserRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { HashRouter } from 'react-router-dom';
 import Router from './Router';
 
 import withAppPageContainer from '@serviceCenter/containers/App/AppPageContainer';
@@ -24,6 +25,10 @@ function AppPage(props) {
         </HashRouter>
     );
 }
+
+AppPage.propTypes = {
+    footerShow: PropTypes.string,
+};
 
 const AppPageWrapperWithContainer = withAppPageContainer({
     Component: AppPage,

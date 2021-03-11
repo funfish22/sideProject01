@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 import { useSelector, useDispatch } from 'react-redux';
 

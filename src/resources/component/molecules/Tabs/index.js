@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import SwipeableViews from 'react-swipeable-views';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 

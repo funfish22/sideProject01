@@ -1,4 +1,6 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { SwipeableDrawer, List, ListItem, ListItemIcon, ListItemText, Divider } from '@material-ui/core';
 
@@ -41,5 +43,11 @@ function LeftDrawer(props) {
         </SwipeableDrawer>
     );
 }
+
+LeftDrawer.propTypes = {
+    open: PropTypes.func,
+    onClose: PropTypes.func,
+    onOpen: PropTypes.func,
+};
 
 export default LeftDrawer;

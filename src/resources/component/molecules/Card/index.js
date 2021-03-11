@@ -1,12 +1,14 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import ActionVillager from '@reducers/Villagers/action';
 
 import { makeStyles } from '@material-ui/core/styles';
 
 import { Typography, Card, CardActionArea, CardMedia } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     media: {
         height: 100,
     },
@@ -36,5 +38,11 @@ function CardRoot(props) {
         </Card>
     );
 }
+
+CardRoot.propTypes = {
+    title: PropTypes.string,
+    id: PropTypes.string,
+    imgUrl: PropTypes.string,
+};
 
 export default CardRoot;
