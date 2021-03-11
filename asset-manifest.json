@@ -1,19 +1,19 @@
 {
   "files": {
-    "404.js": "./404.811e29dad3c3fc08105e.js",
-    "404.js.map": "./404.811e29dad3c3fc08105e.js.map",
-    "Calendar.js": "./Calendar.e276ea7d319d3c6137f0.js",
-    "Calendar.js.map": "./Calendar.e276ea7d319d3c6137f0.js.map",
-    "Home.js": "./Home.1e2a805dd7ccbda707d1.js",
-    "Home.js.map": "./Home.1e2a805dd7ccbda707d1.js.map",
-    "Villagers.js": "./Villagers.30ce6358795dcf1a528e.js",
-    "Villagers.js.map": "./Villagers.30ce6358795dcf1a528e.js.map",
-    "VillagersDetail.js": "./VillagersDetail.b7dd859a8b7fb2193ab7.js",
-    "VillagersDetail.js.map": "./VillagersDetail.b7dd859a8b7fb2193ab7.js.map",
-    "main.js": "./main.30b32ff1f5b095351f66.js",
-    "main.js.map": "./main.30b32ff1f5b095351f66.js.map",
-    "runtime-main.js": "./static/js/runtime-main.78561e7c.js",
-    "runtime-main.js.map": "./static/js/runtime-main.78561e7c.js.map",
+    "404.js": "./404.36911685a58d108b596e.js",
+    "404.js.map": "./404.36911685a58d108b596e.js.map",
+    "Calendar.js": "./Calendar.08e0aa931f7350eaf657.js",
+    "Calendar.js.map": "./Calendar.08e0aa931f7350eaf657.js.map",
+    "Home.js": "./Home.8cc159544e0da75b2947.js",
+    "Home.js.map": "./Home.8cc159544e0da75b2947.js.map",
+    "Villagers.js": "./Villagers.e86a2ee6340f7bfc17a4.js",
+    "Villagers.js.map": "./Villagers.e86a2ee6340f7bfc17a4.js.map",
+    "VillagersDetail.js": "./VillagersDetail.11e031c3a0a9d7f3499f.js",
+    "VillagersDetail.js.map": "./VillagersDetail.11e031c3a0a9d7f3499f.js.map",
+    "main.js": "./main.02d6cc954b9c802c0909.js",
+    "main.js.map": "./main.02d6cc954b9c802c0909.js.map",
+    "runtime-main.js": "./static/js/runtime-main.ca7a2007.js",
+    "runtime-main.js.map": "./static/js/runtime-main.ca7a2007.js.map",
     "static/css/7.405c93a1.chunk.css": "./static/css/7.405c93a1.chunk.css",
     "7.f74ca40ae223ec700d60.js": "./7.f74ca40ae223ec700d60.js",
     "7.f74ca40ae223ec700d60.js.map": "./7.f74ca40ae223ec700d60.js.map",
@@ -31,9 +31,9 @@
     "static/media/index.css": "./static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.78561e7c.js",
+    "static/js/runtime-main.ca7a2007.js",
     "static/css/7.405c93a1.chunk.css",
     "7.f74ca40ae223ec700d60.js",
-    "main.30b32ff1f5b095351f66.js"
+    "main.02d6cc954b9c802c0909.js"
   ]
 }

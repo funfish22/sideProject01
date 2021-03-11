@@ -1,2 +1,0 @@
-(this.webpackJsonpgame_project=this.webpackJsonpgame_project||[]).push([[1],{267:function(e,t,n){"use strict";n.r(t);var a=n(81),c=n(2);var r=Object(a.a)({Component:function(){return Object(c.jsx)("div",{children:"Calendar"})}});t.default=r}}]);
-//# sourceMappingURL=Calendar.e276ea7d319d3c6137f0.js.map
