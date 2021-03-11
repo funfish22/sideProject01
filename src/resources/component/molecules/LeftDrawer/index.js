@@ -45,7 +45,7 @@ function LeftDrawer(props) {
 }
 
 LeftDrawer.propTypes = {
-    open: PropTypes.func,
+    open: PropTypes.bool,
     onClose: PropTypes.func,
     onOpen: PropTypes.func,
 };
