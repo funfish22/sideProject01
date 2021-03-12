@@ -4,16 +4,16 @@
     "404.js.map": "./404.36911685a58d108b596e.js.map",
     "Calendar.js": "./Calendar.08e0aa931f7350eaf657.js",
     "Calendar.js.map": "./Calendar.08e0aa931f7350eaf657.js.map",
-    "Home.js": "./Home.8cc159544e0da75b2947.js",
-    "Home.js.map": "./Home.8cc159544e0da75b2947.js.map",
-    "Villagers.js": "./Villagers.e86a2ee6340f7bfc17a4.js",
-    "Villagers.js.map": "./Villagers.e86a2ee6340f7bfc17a4.js.map",
+    "Home.js": "./Home.366864b069002082ea17.js",
+    "Home.js.map": "./Home.366864b069002082ea17.js.map",
+    "Villagers.js": "./Villagers.3d1cb79c5be568f4c99f.js",
+    "Villagers.js.map": "./Villagers.3d1cb79c5be568f4c99f.js.map",
     "VillagersDetail.js": "./VillagersDetail.11e031c3a0a9d7f3499f.js",
     "VillagersDetail.js.map": "./VillagersDetail.11e031c3a0a9d7f3499f.js.map",
-    "main.js": "./main.02d6cc954b9c802c0909.js",
-    "main.js.map": "./main.02d6cc954b9c802c0909.js.map",
-    "runtime-main.js": "./static/js/runtime-main.ca7a2007.js",
-    "runtime-main.js.map": "./static/js/runtime-main.ca7a2007.js.map",
+    "main.js": "./main.066e269802553044ca76.js",
+    "main.js.map": "./main.066e269802553044ca76.js.map",
+    "runtime-main.js": "./static/js/runtime-main.4fa382d0.js",
+    "runtime-main.js.map": "./static/js/runtime-main.4fa382d0.js.map",
     "static/css/7.405c93a1.chunk.css": "./static/css/7.405c93a1.chunk.css",
     "7.f74ca40ae223ec700d60.js": "./7.f74ca40ae223ec700d60.js",
     "7.f74ca40ae223ec700d60.js.map": "./7.f74ca40ae223ec700d60.js.map",
@@ -31,9 +31,9 @@
     "static/media/index.css": "./static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.ca7a2007.js",
+    "static/js/runtime-main.4fa382d0.js",
     "static/css/7.405c93a1.chunk.css",
     "7.f74ca40ae223ec700d60.js",
-    "main.02d6cc954b9c802c0909.js"
+    "main.066e269802553044ca76.js"
   ]
 }
