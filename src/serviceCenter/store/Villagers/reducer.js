@@ -96,8 +96,22 @@ const selectVillager = (state = INITIAL_STATE, action) => {
     };
 };
 
+const changeStar = (state = INITIAL_STATE, action) => {
+    const newselectList = state.lists.find((row) => {
+        return row.id === action.id;
+    });
+
+    newselectList.star = !state.selectList.star;
+
+    return {
+        ...state,
+        selectList: Object.assign({}, newselectList),
+    };
+};
+
 const VILLAGERS = {
     [Types.SELECT_VILLAGER]: selectVillager,
+    [Types.CHANGE_STAR]: changeStar,
 };
 
 export default createReducer(INITIAL_STATE, VILLAGERS);

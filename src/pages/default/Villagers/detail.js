@@ -19,6 +19,8 @@ import {
     Divider,
 } from '@material-ui/core';
 
+import { Star as StarIcon, StarBorder as StarBorderIcon } from '@material-ui/icons';
+
 const useStyles = makeStyles((theme) => {
     return {
         title: {
@@ -70,6 +72,9 @@ const useStyles = makeStyles((theme) => {
             marginTop: theme.spacing(1),
             marginBottom: theme.spacing(1),
         },
+        starIcon: {
+            marginLeft: 'auto',
+        },
     };
 });
 
@@ -92,7 +97,7 @@ const AccordionSummary = withStyles({
 })(MuiAccordionSummary);
 
 function VillagersDetilPage(props) {
-    const { season, title, imgUrl } = props;
+    const { season, title, imgUrl, changeStar, id, star } = props;
 
     const classes = useStyles();
 
@@ -115,9 +120,16 @@ function VillagersDetilPage(props) {
                     <Typography color="textPrimary">{title}</Typography>
                 </Breadcrumbs>
             </Box>
-            <Typography component="h2" variant="h5" className={classes.title}>
-                {title}
-            </Typography>
+            <Box display="flex" alignItems="center">
+                <Typography component="h2" variant="h5" className={classes.title}>
+                    {title}
+                </Typography>
+                {star ? (
+                    <StarIcon color="primary" className={classes.starIcon} onClick={() => changeStar(id)} />
+                ) : (
+                    <StarBorderIcon color="primary" className={classes.starIcon} onClick={() => changeStar(id)} />
+                )}
+            </Box>
             <Grid container spacing={3} component="section">
                 <Grid item sm={4} xs={12}>
                     <CardMedia component="img" image={imgUrl} title={title} />
@@ -197,6 +209,9 @@ VillagersDetilPage.propTypes = {
     season: PropTypes.array,
     title: PropTypes.string,
     imgUrl: PropTypes.string,
+    changeStar: PropTypes.func,
+    id: PropTypes.string,
+    star: PropTypes.bool,
 };
 
 const VillagersDetailWrapperWithContainer = withVillagersDetailPageContainer({

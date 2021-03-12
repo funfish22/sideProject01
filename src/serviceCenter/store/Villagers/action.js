@@ -5,6 +5,7 @@ const prefix = 'VILLAGERS/';
 export const { Types, Creators } = createActions(
     {
         selectVillager: ['id'],
+        changeStar: ['id'],
     },
     { prefix }
 );

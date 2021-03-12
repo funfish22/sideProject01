@@ -12,14 +12,18 @@ function withVillagersDetailPageContainer({ Component }) {
         const path = window.location.hash.substr(window.location.hash.lastIndexOf('/') + 1);
 
         const { changeFooterShow, changeBackShow } = ActionApp;
-        const { selectVillager } = ActionVillager;
+        const { selectVillager, changeStar } = ActionVillager;
 
         const selectList = useSelector((state) => state.Villagers.selectList);
         const villager = useSelector((state) => state.Villagers.villager);
 
         const { season } = villager;
 
-        const { title, imgUrl } = selectList;
+        const { title, imgUrl, id, star } = selectList;
+
+        const handleChangeStar = (id) => {
+            dispatch(changeStar(id));
+        };
 
         useEffect(() => {
             dispatch(changeFooterShow('none'));
@@ -32,7 +36,16 @@ function withVillagersDetailPageContainer({ Component }) {
             };
         }, [dispatch, changeFooterShow, changeBackShow, selectVillager, path]);
 
-        return <Component season={season} title={title} imgUrl={imgUrl} />;
+        return (
+            <Component
+                season={season}
+                id={id}
+                title={title}
+                imgUrl={imgUrl}
+                star={star}
+                changeStar={(id) => handleChangeStar(id)}
+            />
+        );
     }
 
     hoistNonReactStatic(VillagersDetailPageContainer, withVillagersDetailPageContainer);
