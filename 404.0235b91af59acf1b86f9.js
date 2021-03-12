@@ -1,0 +1,2 @@
+(this.webpackJsonpgame_project=this.webpackJsonpgame_project||[]).push([[1],{282:function(n,t,e){"use strict";e.r(t);e(0);var o=e(17),r=e.n(o),c=e(2);var u=function n(t){var e=t.Component;function o(){return Object(c.jsx)(e,{})}return r()(o,n),o}({Component:function(){return Object(c.jsx)("div",{children:"page not found"})}});t.default=u}}]);
+//# sourceMappingURL=404.0235b91af59acf1b86f9.js.map
