@@ -13,7 +13,6 @@ export const routes = [
         component: React.lazy(() =>
             import(/*webpackChunkName:"Calendar"*/ /*webpackMode:"lazy"*/ '@page/default/Calendar')
         ),
-        exact: true,
     },
     {
         name: 'Villagers',

@@ -13,15 +13,15 @@ function VillagersPage() {
 
     return (
         <Switch>
-            <Route path={`${match.path}/:id`}>
-                <Detail />
-            </Route>
-            <Route path={match.path}>
+            <Route exact path={match.path}>
                 <Container component={Box} my={3}>
                     <Typography component="h2" variant="h5">
                         尚未開發
                     </Typography>
                 </Container>
+            </Route>
+            <Route path={`${match.path}/:id`}>
+                <Detail />
             </Route>
         </Switch>
     );
