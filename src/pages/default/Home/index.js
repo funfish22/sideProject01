@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function HomePage(props) {
-    const { speed, lists } = props;
+    const { speed, lists, homeTabs } = props;
 
     const classes = useStyles();
 
@@ -57,7 +57,7 @@ function HomePage(props) {
                     <Typography component="h2" variant="h5" className={classes.title}>
                         Title
                     </Typography>
-                    <Tabs />
+                    <Tabs homeTabs={homeTabs} />
                 </Box>
             </Container>
         </>
@@ -67,6 +67,7 @@ function HomePage(props) {
 HomePage.propTypes = {
     speed: PropTypes.number,
     lists: PropTypes.array,
+    homeTabs: PropTypes.array,
 };
 
 const HomePageWrapperWithContainer = withHomePageContainer({

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 
@@ -21,7 +22,9 @@ function a11yProps(index) {
     };
 }
 
-function TabsRoot() {
+function TabsRoot(props) {
+    const { homeTabs } = props;
+
     const theme = useTheme();
     const classes = useStyles();
 
@@ -40,9 +43,9 @@ function TabsRoot() {
     return (
         <>
             <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                <Tab label="Item One" {...a11yProps(0)} />
-                <Tab label="Item Two" {...a11yProps(1)} />
-                <Tab label="Item Three" {...a11yProps(2)} />
+                {homeTabs.map((row, index) => (
+                    <Tab key={index} label={row.title} {...a11yProps(index)} />
+                ))}
             </Tabs>
             <Box mx={-1}>
                 <SwipeableViews
@@ -50,37 +53,25 @@ function TabsRoot() {
                     index={value}
                     onChangeIndex={handleChangeIndex}
                 >
-                    <TabPanel value={value} index={0} dir={theme.direction}>
-                        <Grid container>
-                            {cards.map((row) => (
-                                <Grid item xs={4} sm={3} md={2} key={row.id} className={classes.card}>
-                                    <Card title={row.title} id={row.id} imgUrl={row.imgUrl} />
-                                </Grid>
-                            ))}
-                        </Grid>
-                    </TabPanel>
-                    <TabPanel value={value} index={1} dir={theme.direction}>
-                        <Grid container>
-                            {cards.map((row) => (
-                                <Grid item xs={4} sm={3} md={2} key={row.id} className={classes.card}>
-                                    <Card title={row.title} id={row.id} imgUrl={row.imgUrl} />
-                                </Grid>
-                            ))}
-                        </Grid>
-                    </TabPanel>
-                    <TabPanel value={value} index={2} dir={theme.direction}>
-                        <Grid container>
-                            {cards.map((row) => (
-                                <Grid item xs={4} sm={3} md={2} key={row.id} className={classes.card}>
-                                    <Card title={row.title} id={row.id} imgUrl={row.imgUrl} />
-                                </Grid>
-                            ))}
-                        </Grid>
-                    </TabPanel>
+                    {homeTabs.map((row, index) => (
+                        <TabPanel key={index} value={value} index={index} dir={theme.direction}>
+                            <Grid container>
+                                {cards.map((row) => (
+                                    <Grid item xs={4} sm={3} md={2} key={row.id} className={classes.card}>
+                                        <Card title={row.title} id={row.id} imgUrl={row.imgUrl} />
+                                    </Grid>
+                                ))}
+                            </Grid>
+                        </TabPanel>
+                    ))}
                 </SwipeableViews>
             </Box>
         </>
     );
 }
+
+TabsRoot.propTypes = {
+    homeTabs: PropTypes.array,
+};
 
 export default TabsRoot;
