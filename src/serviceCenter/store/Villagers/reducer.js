@@ -3,14 +3,67 @@ import { Types } from './action';
 
 const INITIAL_STATE = {
     lists: [
-        { id: '01', title: '一', imgUrl: 'https://material-ui.com/static/images/cards/contemplative-reptile.jpg' },
-        { id: '02', title: '二', imgUrl: 'https://material-ui.com/static/images/cards/paella.jpg' },
-        { id: '03', title: '三', imgUrl: 'https://material-ui.com/static/images/cards/contemplative-reptile.jpg' },
-        { id: '04', title: '四', imgUrl: 'https://material-ui.com/static/images/cards/paella.jpg' },
-        { id: '05', title: '五', imgUrl: 'https://material-ui.com/static/images/cards/contemplative-reptile.jpg' },
-        { id: '06', title: '六', imgUrl: 'https://material-ui.com/static/images/cards/paella.jpg' },
+        {
+            id: '01',
+            title: '1',
+            imgUrl: 'https://material-ui.com/static/images/cards/contemplative-reptile.jpg',
+            sex: 'Male',
+            star: true,
+        },
+        {
+            id: '02',
+            title: '2',
+            imgUrl: 'https://material-ui.com/static/images/cards/paella.jpg',
+            sex: 'Female',
+            star: false,
+        },
+        {
+            id: '03',
+            title: '3',
+            imgUrl: 'https://material-ui.com/static/images/cards/contemplative-reptile.jpg',
+            sex: 'Female',
+            star: false,
+        },
+        {
+            id: '04',
+            title: '4',
+            imgUrl: 'https://material-ui.com/static/images/cards/paella.jpg',
+            sex: 'Male',
+            star: false,
+        },
+        {
+            id: '05',
+            title: '5',
+            imgUrl: 'https://material-ui.com/static/images/cards/contemplative-reptile.jpg',
+            sex: 'Male',
+            star: false,
+        },
+        {
+            id: '06',
+            title: '6',
+            imgUrl: 'https://material-ui.com/static/images/cards/paella.jpg',
+            sex: 'Male',
+            star: false,
+        },
     ],
     selectList: {},
+    villagersTabs: [
+        {
+            title: 'Star',
+        },
+        {
+            title: 'All',
+        },
+        {
+            title: 'Normal',
+        },
+        {
+            title: 'Male',
+        },
+        {
+            title: 'Female',
+        },
+    ],
     villager: {
         season: [
             {

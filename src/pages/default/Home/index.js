@@ -52,13 +52,11 @@ function HomePage(props) {
                         })}
                 </Swiper>
             </Box>
-            <Container>
-                <Box color="primary.main" mb={2}>
-                    <Typography component="h2" variant="h5" className={classes.title}>
-                        Title
-                    </Typography>
-                    <Tabs homeTabs={homeTabs} />
-                </Box>
+            <Container component={Box} my={3} color="primary.main">
+                <Typography component="h2" variant="h5" className={classes.title}>
+                    Title
+                </Typography>
+                <Tabs tabs={homeTabs} />
             </Container>
         </>
     );
