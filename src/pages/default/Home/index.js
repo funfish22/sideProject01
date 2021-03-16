@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function HomePage(props) {
-    const { speed, lists, homeTabs } = props;
+    const { speed, bannerLists, homeTabs, lists } = props;
 
     const classes = useStyles();
 
@@ -42,8 +42,8 @@ function HomePage(props) {
         <>
             <Box className={classes.swiperRoot}>
                 <Swiper slidesPerView={1} pagination={{ clickable: true }} loop autoplay={{ delay: speed }}>
-                    {lists &&
-                        lists.map((row, index) => {
+                    {bannerLists &&
+                        bannerLists.map((row, index) => {
                             return (
                                 <SwiperSlide key={index}>
                                     <CardMedia component="img" image={row.imgUrl} alt={row.title} />
@@ -56,7 +56,7 @@ function HomePage(props) {
                 <Typography component="h2" variant="h5" className={classes.title}>
                     Title
                 </Typography>
-                <Tabs tabs={homeTabs} />
+                <Tabs tabs={homeTabs} lists={lists} />
             </Container>
         </>
     );
@@ -64,8 +64,9 @@ function HomePage(props) {
 
 HomePage.propTypes = {
     speed: PropTypes.number,
-    lists: PropTypes.array,
+    bannerLists: PropTypes.array,
     homeTabs: PropTypes.array,
+    lists: PropTypes.array,
 };
 
 const HomePageWrapperWithContainer = withHomePageContainer({

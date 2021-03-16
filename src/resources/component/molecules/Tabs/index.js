@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useRouteMatch } from 'react-router-dom';
@@ -29,23 +29,23 @@ function CardsRoot({ cards, value }) {
     let newCards = [];
 
     switch (value) {
-        case 0:
+        case 'Star':
             newCards = cards.filter((row) => {
                 return row.star;
             });
             break;
-        case 1:
+        case 'All':
             newCards = cards;
             break;
-        case 2:
+        case 'Normal':
             newCards = cards;
             break;
-        case 3:
+        case 'Male':
             newCards = cards.filter((row) => {
                 return row.sex === 'Male';
             });
             break;
-        case 4:
+        case 'Female':
             newCards = cards.filter((row) => {
                 return row.sex === 'Female';
             });
@@ -64,7 +64,9 @@ function CardsRoot({ cards, value }) {
 }
 
 function TabsRoot(props) {
-    const { tabs } = props;
+    const { tabs, lists } = props;
+
+    const [newTabs, setNewTabs] = useState([]);
 
     const theme = useTheme();
 
@@ -80,12 +82,26 @@ function TabsRoot(props) {
         setValue(index);
     };
 
+    useEffect(() => {
+        const newTabs1 = lists.filter((row) => {
+            return row.star === true;
+        });
+
+        if (newTabs1.length === 0) {
+            const newTabs2 = tabs.filter((row) => {
+                return row.title !== 'Star';
+            });
+            setNewTabs(newTabs2);
+        } else {
+            setNewTabs(tabs);
+        }
+    }, []);
     return (
         <>
             <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                {tabs.map((row, index) => (
-                    <Tab key={index} label={row.title} {...a11yProps(index)} />
-                ))}
+                {newTabs.map((row, index) => {
+                    return <Tab key={index} label={row.title} {...a11yProps(index)} />;
+                })}
             </Tabs>
             <Box mx={-1}>
                 <SwipeableViews
@@ -93,10 +109,10 @@ function TabsRoot(props) {
                     index={value}
                     onChangeIndex={handleChangeIndex}
                 >
-                    {tabs.map((row, index) => (
+                    {newTabs.map((row, index) => (
                         <TabPanel key={index} value={value} index={index} dir={theme.direction}>
                             <Grid container>
-                                <CardsRoot cards={cards} value={value} />
+                                <CardsRoot cards={cards} value={row.title} />
                             </Grid>
                         </TabPanel>
                     ))}
@@ -108,6 +124,7 @@ function TabsRoot(props) {
 
 TabsRoot.propTypes = {
     tabs: PropTypes.array,
+    lists: PropTypes.array,
 };
 
 export default TabsRoot;

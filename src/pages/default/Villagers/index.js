@@ -23,7 +23,7 @@ function VillagersPage(props) {
     const match = useRouteMatch();
     const classes = useStyles();
 
-    const { villagersTabs } = props;
+    const { villagersTabs, lists } = props;
 
     return (
         <Switch>
@@ -40,7 +40,7 @@ function VillagersPage(props) {
                     <Typography component="h2" variant="h5" className={classes.title}>
                         Title
                     </Typography>
-                    <Tabs tabs={villagersTabs} />
+                    <Tabs tabs={villagersTabs} lists={lists} />
                 </Container>
             </Route>
             <Route path={`${match.path}/:id`}>
@@ -52,6 +52,7 @@ function VillagersPage(props) {
 
 VillagersPage.propTypes = {
     villagersTabs: PropTypes.array,
+    lists: PropTypes.array,
 };
 
 const VillagersWrapperWithContainer = withVillagersPageContainer({

@@ -5,7 +5,8 @@ import { useSelector } from 'react-redux';
 function withVillagersPageContainer({ Component }) {
     function VillagersPageContainer() {
         const villagersTabs = useSelector((state) => state.Villagers.villagersTabs);
-        return <Component villagersTabs={villagersTabs} />;
+        const lists = useSelector((state) => state.Villagers.lists);
+        return <Component villagersTabs={villagersTabs} lists={lists} />;
     }
 
     hoistNonReactStatic(VillagersPageContainer, withVillagersPageContainer);

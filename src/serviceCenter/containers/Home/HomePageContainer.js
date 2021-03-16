@@ -6,10 +6,11 @@ function withHomePageContainer({ Component }) {
     function HomePageContainer() {
         const banner = useSelector((state) => state.Home.banner);
         const homeTabs = useSelector((state) => state.Home.homeTabs);
+        const lists = useSelector((state) => state.Villagers.lists);
 
-        const { speed, lists } = banner;
+        const { speed, bannerLists } = banner;
 
-        return <Component speed={speed} lists={lists} homeTabs={homeTabs} />;
+        return <Component speed={speed} bannerLists={bannerLists} homeTabs={homeTabs} lists={lists} />;
     }
 
     hoistNonReactStatic(HomePageContainer, withHomePageContainer);
